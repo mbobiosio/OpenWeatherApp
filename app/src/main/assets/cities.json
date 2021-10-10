@@ -2,81 +2,97 @@
   {
     "id": 192950,
     "name": "Kenya",
-    "country": "KE"
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Kenya.svg",
+    "country": "Kenya"
   },
   {
     "id": 360630,
     "name": "Cairo",
-    "country": "EG"
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg",
+    "country": "Egypt"
   },
   {
     "id": 2332453,
     "name": "Lagos",
-    "country": "NG"
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg",
+    "country": "Nigeria"
   },
   {
     "id": 2352778,
     "name": "Abuja",
-    "country": "NG"
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg",
+    "country": "Nigeria"
   },
   {
     "id": 5128581,
     "name": "New York",
-    "country": "US"
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg",
+    "country": "United States"
   },
   {
     "id": 4736286,
     "name": "Texas",
-    "country": "US"
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg",
+    "country": "United States"
   },
   {
     "id": 6176928,
     "name": "Amazon",
-    "country": "CA"
+    "icon": "https://upload.wikimedia.org/wikipedia/en/c/cf/Flag_of_Canada.svg",
+    "country": "Canada"
   },
   {
     "id": 630336,
     "name": "Belarus",
-    "country": "BY"
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/8/85/Flag_of_Belarus.svg",
+    "country": "Belarus"
   },
   {
     "id": 932692,
     "name": "Lesotho",
-    "country": "LS"
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Flag_of_Lesotho.svg",
+    "country": "Lesotho"
   },
   {
     "id": 1642911,
     "name": "Jakarta",
-    "country": "ID"
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg",
+    "country": "Indonesia"
   },
   {
     "id": 323786,
     "name": "Ankara",
-    "country": "TR"
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Flag_of_Turkey.svg",
+    "country": "Turkey"
   },
   {
     "id": 2335204,
     "name": "Kano",
-    "country": "NG"
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg",
+    "country": "Nigeria"
   },
   {
     "id": 4924733,
     "name": "Peru",
-    "country": "US"
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/d/df/Flag_of_Peru_%28state%29.svg",
+    "country": "Peru"
   },
   {
     "id": 6183235,
     "name": "Winnipeg",
-    "country": "CA"
+    "icon": "https://upload.wikimedia.org/wikipedia/en/c/cf/Flag_of_Canada.svg",
+    "country": "Canada"
   },
   {
     "id": 98182,
     "name": "Baghdad",
-    "country": "IQ"
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Flag_of_Iraq.svg",
+    "country": "Iraq"
   },
   {
     "id": 2650328,
     "name": "Westham",
-    "country": "GB"
+    "icon": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg",
+    "country": "Great Britain"
   }
 ]

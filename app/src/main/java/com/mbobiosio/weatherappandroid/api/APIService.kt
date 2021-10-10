@@ -1,7 +1,6 @@
 package com.mbobiosio.weatherappandroid.api
 
-import com.mbobiosio.weatherappandroid.model.WeatherResponse
-import retrofit2.Call
+import com.mbobiosio.weatherappandroid.model.weather.WeatherResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

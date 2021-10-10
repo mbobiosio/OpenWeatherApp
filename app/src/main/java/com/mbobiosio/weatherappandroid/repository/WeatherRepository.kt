@@ -1,8 +1,8 @@
 package com.mbobiosio.weatherappandroid.repository
 
 import com.mbobiosio.weatherappandroid.api.RetrofitClient
-import com.mbobiosio.weatherappandroid.model.Result
-import com.mbobiosio.weatherappandroid.model.WeatherResponse
+import com.mbobiosio.weatherappandroid.model.weather.Result
+import com.mbobiosio.weatherappandroid.model.weather.WeatherResponse
 
 /*
 * Created by Mbuodile Obiosio on Oct 10, 2021.

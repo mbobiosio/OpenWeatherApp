@@ -1,7 +1,7 @@
 package com.mbobiosio.weatherappandroid.repository
 
 import com.mbobiosio.weatherappandroid.model.APIResponse
-import com.mbobiosio.weatherappandroid.model.Result
+import com.mbobiosio.weatherappandroid.model.weather.Result
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.CoroutineDispatcher

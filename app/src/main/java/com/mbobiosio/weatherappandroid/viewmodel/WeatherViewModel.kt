@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mbobiosio.weatherappandroid.model.Result
-import com.mbobiosio.weatherappandroid.model.WeatherResponse
+import com.mbobiosio.weatherappandroid.model.weather.Result
+import com.mbobiosio.weatherappandroid.model.weather.WeatherResponse
 import com.mbobiosio.weatherappandroid.repository.WeatherRepository
 import kotlinx.coroutines.launch
 

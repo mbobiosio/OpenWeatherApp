@@ -1,4 +1,4 @@
-package com.mbobiosio.weatherappandroid.model
+package com.mbobiosio.weatherappandroid.model.weather
 
 import com.squareup.moshi.Json
 

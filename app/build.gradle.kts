@@ -53,6 +53,9 @@ dependencies {
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
 
+    //Coil
+    implementation("io.coil-kt:coil-svg:1.4.0")
+
     /*Square*/
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.moshi:moshi-kotlin:1.12.0")
@@ -62,7 +65,7 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
 
     //Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
 
     //Intuit
     implementation("com.intuit.sdp:sdp-android:1.0.6")
@@ -70,10 +73,6 @@ dependencies {
 
     //Power Spinner
     implementation("com.github.skydoves:powerspinner:1.1.9")
-
-    //Glide
-    implementation("com.github.bumptech.glide:glide:4.12.0")
-    kapt("com.github.bumptech.glide:compiler:4.12.0")
 
     //Timber
     implementation("com.jakewharton.timber:timber:4.7.1")

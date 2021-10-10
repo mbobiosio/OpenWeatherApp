@@ -1,4 +1,6 @@
-package com.mbobiosio.weatherappandroid.model
+package com.mbobiosio.weatherappandroid.model.weather
+
+import com.mbobiosio.weatherappandroid.model.APIResponse
 
 /*
 * Created by Mbuodile Obiosio on Oct 10, 2021.

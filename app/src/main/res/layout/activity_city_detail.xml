@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="cityDetail"
+            type="com.mbobiosio.weatherappandroid.model.weather.WeatherResponse" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.CityDetailActivity">
+
+        <com.skydoves.powerspinner.PowerSpinnerView
+            android:id="@+id/leagues"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:background="?colorSurface"
+            android:fontFamily="@font/montserrat"
+            android:gravity="start|center_vertical"
+            android:hint="@string/city"
+            android:minHeight="48dp"
+            android:padding="@dimen/_6sdp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:textColor="?colorOnSurface"
+            android:textColorHint="?colorOnBackground"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            app:spinner_arrow_gravity="end"
+            app:spinner_arrow_tint="?colorOnSurface"
+            app:spinner_item_array="@array/cities"
+            app:spinner_popup_animation="bounce"
+            app:spinner_popup_background="@color/colorBackground"
+            app:spinner_popup_elevation="14dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_location" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="260dp"
+            tools:layout_editor_absoluteY="56dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

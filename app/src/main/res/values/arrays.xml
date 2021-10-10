@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cities">
+        <item>Kenya</item>
+        <item>Cairo</item>
+        <item>Lagos</item>
+        <item>Abuja</item>
+        <item>New York</item>
+        <item>Texas</item>
+        <item>Amazon</item>
+        <item>Belarus</item>
+        <item>Lesotho</item>
+        <item>Jakarta</item>
+        <item>Ankara</item>
+        <item>Kano</item>
+        <item>Peru</item>
+        <item>Winnipeg</item>
+        <item>Baghdad</item>
+        <item>Westham</item>
+    </string-array>
+</resources>
