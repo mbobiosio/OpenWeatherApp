@@ -29,29 +29,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         binding.lifecycleOwner = this
 
+        //initialise adapter
         initAdapter()
+
+        //add cities to array list after loading from json file
         addCitiesFromJson()
 
-        viewModel.weatherInfo.observe(this) {
-            it?.let {
-                Timber.d("${it.name}")
-            }
-        }
-
-        viewModel.errorMessage.observe(this) {
-            it?.let {
-                Timber.d("Error - ${it.message?.message}")
-            }
-        }
-
-        viewModel.networkError.observe(this) {
-            it?.let {
-                Timber.d("Network Error - ${it.error}")
-            }
-        }
-
         //Timber.d("City ${addCitiesFromJson()}")
-
 
     }
 
@@ -67,10 +51,11 @@ class MainActivity : AppCompatActivity() {
                 val icon = cityObj.getString("icon")
                 val country = cityObj.getString("country")
                 val city = City(id = id, name = name, icon = icon, country = country)
+
                 Timber.d("$city")
+
                 cityList.add(city)
                 adapter.setData(cityList)
-                //viewItems.add(holidays)
             }
         } catch (e: JSONException) {
             Timber.d("JSONException $e")

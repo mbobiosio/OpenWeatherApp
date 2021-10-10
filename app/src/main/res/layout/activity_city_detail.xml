@@ -1,61 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="cityDetail"
             type="com.mbobiosio.weatherappandroid.model.weather.WeatherResponse" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.activity.CityDetailActivity">
+        android:layout_height="match_parent">
 
-        <com.skydoves.powerspinner.PowerSpinnerView
-            android:id="@+id/leagues"
-            android:layout_width="@dimen/_100sdp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?colorSurface"
-            android:fontFamily="@font/montserrat"
-            android:gravity="start|center_vertical"
-            android:hint="@string/city"
-            android:minHeight="48dp"
-            android:padding="@dimen/_6sdp"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:textColor="?colorOnSurface"
-            android:textColorHint="?colorOnBackground"
-            android:textSize="@dimen/_12ssp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="@+id/imageView2"
-            app:spinner_arrow_gravity="end"
-            app:spinner_arrow_tint="?colorOnSurface"
-            app:spinner_item_array="@array/cities"
-            app:spinner_popup_animation="bounce"
-            app:spinner_popup_background="@color/colorBackground"
-            app:spinner_popup_elevation="14dp" />
+            tools:context=".ui.activity.CityDetailActivity">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_location" />
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/materialToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/ic_arrow_back" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="260dp"
-            tools:layout_editor_absoluteY="56dp" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:contentDescription="@string/city"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
+                app:srcCompat="@drawable/ic_location" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.skydoves.powerspinner.PowerSpinnerView
+                android:id="@+id/cities"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:background="?colorSurface"
+                android:fontFamily="@font/montserrat"
+                android:gravity="start|center_vertical"
+                android:hint="@string/city"
+                android:minHeight="48dp"
+                android:padding="@dimen/_6sdp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textColor="?colorOnSurface"
+                android:textColorHint="?colorOnBackground"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="@+id/imageView2"
+                app:spinner_arrow_gravity="end"
+                app:spinner_arrow_tint="?colorOnSurface"
+                app:spinner_item_array="@array/cities"
+                app:spinner_popup_animation="bounce"
+                app:spinner_popup_background="@color/colorBackground"
+                app:spinner_popup_elevation="14dp" />
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView4"
+                city="@{cityDetail.name}"
+                country="@{cityDetail.sys.country}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:background="?colorSurface"
+                android:fontFamily="@font/montserrat"
+                android:padding="@dimen/_4sdp"
+                android:textColor="?colorOnSurface"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/cities"
+                app:layout_constraintStart_toEndOf="@+id/cities"
+                app:layout_constraintTop_toTopOf="@+id/cities"
+                tools:text="Lagos" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView3"
+                temperature="@{cityDetail.main.temperature}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:textColor="?colorOnBackground"
+                android:textSize="@dimen/_50ssp"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                tools:text="21" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView5"
+                weather="@{cityDetail}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                tools:text="Clouds" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView3"
+                weatherIcon="@{cityDetail}"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView6"
+                date="@{cityDetail.dt}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                tools:text="Sunday Oct 10, 2021" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorSurface"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/details"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <include
+                android:id="@+id/weatherLayout"
+                layout="@layout/weather_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <ImageView
+                android:id="@+id/sunrise"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_marginStart="32dp"
+                android:contentDescription="@string/sunrise_sunset"
+                android:layout_marginTop="@dimen/_32sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/weatherLayout"
+                app:srcCompat="@drawable/ic_sunrise" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView8"
+                sys="@{cityDetail.sys.sunrise}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/sunrise"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="@+id/sunrise"
+                app:layout_constraintTop_toBottomOf="@+id/sunrise"
+                tools:text="6:05am" />
+
+            <ImageView
+                android:id="@+id/sunset"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_marginEnd="32dp"
+                android:contentDescription="@string/sunrise_sunset"
+                app:layout_constraintBottom_toBottomOf="@+id/sunrise"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/sunrise"
+                app:srcCompat="@drawable/ic_sunset" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textView9"
+                sys="@{cityDetail.sys.sunset}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/textView8"
+                app:layout_constraintEnd_toEndOf="@+id/sunset"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/sunset"
+                app:layout_constraintTop_toTopOf="@+id/textView8"
+                tools:text="6:45pm" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

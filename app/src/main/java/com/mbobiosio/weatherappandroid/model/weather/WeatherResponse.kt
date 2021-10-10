@@ -40,11 +40,11 @@ data class WeatherResponse(
     val clouds: Clouds?,
 
     @Json(name = "dt")
-    val dt: Long?,
+    val dt: Int?,
 
     @Json(name = "sys")
     val sys: Sys?,
 
     @Json(name = "timezone")
-    val timezone: Long?
+    val timezone: Long?,
 )

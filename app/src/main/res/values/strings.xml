@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">Weather App Android</string>
     <string name="flag">Country Flag</string>
-    <string name="city">City</string>
+    <string name="city">Select City</string>
+    <string name="details">Details</string>
+    <string name="real_feel">Real Feel</string>
+    <string name="humidity">Humidity</string>
+    <string name="pressure">Pressure</string>
+    <string name="wind_speed">Wind Speed</string>
+    <string name="sunrise_sunset">Sunrise to Sunset</string>
 </resources>

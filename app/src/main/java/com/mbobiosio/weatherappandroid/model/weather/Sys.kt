@@ -18,8 +18,8 @@ data class Sys(
     val country: String?,
 
     @Json(name = "sunrise")
-    val sunrise: Long?,
+    val sunrise: Int?,
 
     @Json(name = "sunset")
-    val sunset: Long?
+    val sunset: Int?
 )
