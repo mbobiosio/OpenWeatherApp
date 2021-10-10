@@ -1,0 +1,82 @@
+[
+  {
+    "id": 192950,
+    "name": "Kenya",
+    "country": "KE"
+  },
+  {
+    "id": 360630,
+    "name": "Cairo",
+    "country": "EG"
+  },
+  {
+    "id": 2332453,
+    "name": "Lagos",
+    "country": "NG"
+  },
+  {
+    "id": 2352778,
+    "name": "Abuja",
+    "country": "NG"
+  },
+  {
+    "id": 5128581,
+    "name": "New York",
+    "country": "US"
+  },
+  {
+    "id": 4736286,
+    "name": "Texas",
+    "country": "US"
+  },
+  {
+    "id": 6176928,
+    "name": "Amazon",
+    "country": "CA"
+  },
+  {
+    "id": 630336,
+    "name": "Belarus",
+    "country": "BY"
+  },
+  {
+    "id": 932692,
+    "name": "Lesotho",
+    "country": "LS"
+  },
+  {
+    "id": 1642911,
+    "name": "Jakarta",
+    "country": "ID"
+  },
+  {
+    "id": 323786,
+    "name": "Ankara",
+    "country": "TR"
+  },
+  {
+    "id": 2335204,
+    "name": "Kano",
+    "country": "NG"
+  },
+  {
+    "id": 4924733,
+    "name": "Peru",
+    "country": "US"
+  },
+  {
+    "id": 6183235,
+    "name": "Winnipeg",
+    "country": "CA"
+  },
+  {
+    "id": 98182,
+    "name": "Baghdad",
+    "country": "IQ"
+  },
+  {
+    "id": 2650328,
+    "name": "Westham",
+    "country": "GB"
+  }
+]
