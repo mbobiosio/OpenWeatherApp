@@ -2,25 +2,18 @@ package com.mbobiosio.weatherappandroid.ui
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.mbobiosio.weatherappandroid.databinding.ActivityMainBinding
 import com.mbobiosio.weatherappandroid.listener.CityClickListener
 import com.mbobiosio.weatherappandroid.model.City
 import com.mbobiosio.weatherappandroid.ui.activity.CityDetailActivity
 import com.mbobiosio.weatherappandroid.ui.adapter.CitiesAdapter
-import com.mbobiosio.weatherappandroid.viewmodel.WeatherViewModel
-import org.json.JSONArray
-import org.json.JSONException
-import timber.log.Timber
-import java.io.IOException
-import java.nio.charset.Charset
-import org.json.JSONObject
+import com.mbobiosio.weatherappandroid.util.loadJsonFromAsset
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val viewModel by viewModels<WeatherViewModel>()
-    private val cityList = arrayListOf<City>()
     private lateinit var adapter: CitiesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,53 +28,27 @@ class MainActivity : AppCompatActivity() {
         //add cities to array list after loading from json file
         addCitiesFromJson()
 
-        //Timber.d("City ${addCitiesFromJson()}")
-
     }
 
     private fun addCitiesFromJson() {
-        try {
-            val cities = loadCitiesFromAsset()
-            val citiesArray = JSONArray(cities)
 
-            for (i in 0 until citiesArray.length()) {
-                val cityObj: JSONObject = citiesArray.getJSONObject(i)
-                val id = cityObj.getLong("id")
-                val name = cityObj.getString("name")
-                val icon = cityObj.getString("icon")
-                val country = cityObj.getString("country")
-                val city = City(id = id, name = name, icon = icon, country = country)
+        /*
+        * Load data from json file.
+        * This file must be formatted as an array list in this context
+        * */
+        val jsonData = loadJsonFromAsset("cities.json")
 
-                Timber.d("$city")
+        //Gson TypeToken is used to deserialize json arrays
+        val city: List<City> = Gson().fromJson(jsonData, object : TypeToken<List<City>>() {}.type)
 
-                cityList.add(city)
-                adapter.setData(cityList)
-            }
-        } catch (e: JSONException) {
-            Timber.d("JSONException $e")
-        } catch (e: IOException) {
-            Timber.d("IOException $e")
-        }
+        /*
+        * Using ListAdapter allows a better handling of recycler views
+        * ListAdapter gets data using a method called submitList() which requires a list
+        * Beautiful aspect of this is not needing to use getItemCount in Adapter.
+        * */
+        adapter.submitList(city)
     }
 
-
-    private fun loadCitiesFromAsset(): String {
-        val json: String?
-        try {
-            val inputStream = assets.open("cities.json")
-            val size = inputStream.available()
-            val buffer = ByteArray(size)
-            val charset: Charset = Charsets.UTF_8
-            inputStream.read(buffer)
-            inputStream.close()
-            json = String(buffer, charset)
-        } catch (e: IOException) {
-            Timber.d(e)
-            return ""
-        }
-
-        return json
-    }
 
     private fun initAdapter() {
         adapter = CitiesAdapter(object : CityClickListener {

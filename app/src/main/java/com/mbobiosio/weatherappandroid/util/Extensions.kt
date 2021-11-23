@@ -1,5 +1,8 @@
 package com.mbobiosio.weatherappandroid.util
 
+import android.content.Context
+import timber.log.Timber
+import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -11,6 +14,17 @@ import java.util.*
 const val BASE_URL = "https://api.openweathermap.org/data/2.5/"
 
 const val ICON_URL = "https://openweathermap.org/img/w/"
+
+fun Context.loadJsonFromAsset(jsonFileName: String): String? {
+    val json: String
+    try {
+        json = this.assets.open(jsonFileName).bufferedReader().use { it.readText() }
+    } catch (e: IOException) {
+        Timber.d(e)
+        return null
+    }
+    return json
+}
 
 fun Double.kelvinToCelsius() : Int {
     return  (this - 273.15).toInt()

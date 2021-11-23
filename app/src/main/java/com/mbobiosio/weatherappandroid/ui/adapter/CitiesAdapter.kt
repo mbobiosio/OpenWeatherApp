@@ -2,6 +2,8 @@ package com.mbobiosio.weatherappandroid.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.mbobiosio.weatherappandroid.databinding.ItemCitiesBinding
 import com.mbobiosio.weatherappandroid.listener.CityClickListener
@@ -14,9 +16,15 @@ import com.mbobiosio.weatherappandroid.model.City
 */
 class CitiesAdapter(
     private val listener: CityClickListener
-) : RecyclerView.Adapter<CitiesAdapter.CitiesViewHolder>() {
+) : ListAdapter<City, CitiesAdapter.CitiesViewHolder>(ItemCallback()) {
 
-    private var dataList: List<City> = ArrayList()
+    private class ItemCallback : DiffUtil.ItemCallback<City>() {
+        override fun areItemsTheSame(oldItem: City, newItem: City): Boolean =
+            oldItem.id == newItem.id
+
+        override fun areContentsTheSame(oldItem: City, newItem: City): Boolean =
+            oldItem == newItem
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CitiesViewHolder {
         val binding = ItemCitiesBinding.inflate(
@@ -25,13 +33,10 @@ class CitiesAdapter(
         return CitiesViewHolder(binding)
     }
 
-    override fun getItemCount() = dataList.size
-
-    override fun onBindViewHolder(holder: CitiesViewHolder, position: Int) =
-        holder.bind(dataList[position], listener)
-
-    fun setData(cities: List<City>) {
-        this.dataList = cities
+    override fun onBindViewHolder(holder: CitiesViewHolder, position: Int) {
+        getItem(position)?.let {
+            holder.bind(it, listener)
+        }
     }
 
     class CitiesViewHolder(
