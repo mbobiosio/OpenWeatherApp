@@ -3,8 +3,8 @@
 ## Simple application to see weather information in selected cities
 
 ## Screenshots
-<img alt="cities" src="https://raw.githubusercontent.com/mbobiosio/OpenWeatherApp/screenshots/city_list.png" width="235" height="500">
-<img alt="weather details" src="https://raw.githubusercontent.com/mbobiosio/OpenWeatherApp/screenshots/weather_details.png" width="235" height="500">
+<img alt="cities" src="https://raw.githubusercontent.com/mbobiosio/OpenWeatherApp/main/screenshots/city_list.png" width="235" height="500">
+<img alt="weather details" src="https://raw.githubusercontent.com/mbobiosio/OpenWeatherApp/main/screenshots/weather_details.png" width="235" height="500">
 
 
 ### Installing
