@@ -30,31 +30,16 @@ fun Double.kelvinToCelsius() : Int {
     return  (this - 273.15).toInt()
 }
 
-fun Int.unixTimeToDateTime() : String {
+fun Int.convertUnixTime(format: String?) : String {
 
     try {
         val calendar = Calendar.getInstance()
         calendar.timeInMillis = this*1000.toLong()
 
-        val outputDateFormat = SimpleDateFormat("EEE, dd MMM, yyyy - hh:mm a", Locale.ENGLISH)
+        //EEE, dd MMM, yyyy - hh:mm a - to dateTime
+        //hh:mm a - to string
+        val outputDateFormat = SimpleDateFormat(format, Locale.ENGLISH)
         outputDateFormat.timeZone = TimeZone.getDefault() // user's default time zone
-        return outputDateFormat.format(calendar.time)
-
-    } catch (e: Exception) {
-        e.printStackTrace()
-    }
-
-    return this.toString()
-}
-
-fun Int.unixTimeToString() : String {
-
-    try {
-        val calendar = Calendar.getInstance()
-        calendar.timeInMillis = this*1000.toLong()
-
-        val outputDateFormat = SimpleDateFormat("hh:mm a", Locale.ENGLISH)
-        outputDateFormat.timeZone = TimeZone.getDefault()
         return outputDateFormat.format(calendar.time)
 
     } catch (e: Exception) {

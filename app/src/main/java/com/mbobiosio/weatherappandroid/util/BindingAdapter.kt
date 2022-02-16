@@ -71,7 +71,7 @@ fun ShapeableImageView.weatherIcon(icon: WeatherResponse?) {
 @BindingAdapter("date")
 fun MaterialTextView.date(date: Int?) {
     date?.let {
-        val convertDate = it.unixTimeToDateTime()
+        val convertDate = it.convertUnixTime("EEE, dd MMM, yyyy - hh:mm a")
         this.text = convertDate
     }
 }
@@ -100,6 +100,6 @@ fun MaterialTextView.windSpeed(windSpeed: Double?) {
 @BindingAdapter("sys")
 fun MaterialTextView.sys(sys: Int?) {
     sys?.let {
-        this.text = it.unixTimeToString()
+        this.text = it.convertUnixTime("hh:mm a")
     }
 }
